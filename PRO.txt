@@ -1,0 +1,62 @@
+Requete numéro 1 : 
+SELECT nom, annéeNaiss
+FROM   artiste
+WHERE annéeNaiss <= 1950;
+
+Requete numéro 2
+SELECT titre 
+FROM film
+WHERE genre = "drame";
+
+Requete numéro 3
+SELECT nomRôle 
+FROM role 
+INNER JOIN artiste 
+ON artiste.idArtiste = role.idActeur 
+WHERE artiste.nom = 'Willis' AND artiste.prénom = 'Bruce';
+
+Requete numéro 4
+SELECT nom, prénom 
+FROM artiste 
+INNER JOIN film 
+ON idRéalisateur= idArtiste
+WHERE titre = 'Memento';
+
+Requete numéro 5
+SELECT note 
+FROM notation 
+INNER JOIN film 
+ON notation.idfilm= film.idfilm
+WHERE titre = 'Fargo';
+
+Requete numéro 6
+SELECT nom , prénom 
+FROM artiste 
+INNER JOIN role 
+ON idArtiste= idActeur
+WHERE nomRôle = 'Chewbacca';
+
+Requete numéro 7
+SELECT titre 
+FROM film 
+INNER JOIN role 
+ON role.idFilm= film.idFilm
+WHERE nomRôle = 'John McClane';
+
+Requete numéro 8
+SELECT nom , prénom
+FROM artiste
+INNER JOIN role
+ON role.idActeur=artiste.idArtiste
+INNER JOIN film
+ON film.idFilm = role.idFilm 
+WHERE titre= 'Sueurs froides'
+
+Requete numéro 9
+SELECT titre
+FROM film
+INNER JOIN notation
+ON notation.idFilm = film.idFilm
+INNER JOIN internaute
+ON internaute.email = notation.email 
+WHERE nom='Nom0'AND prénom='Prénom0';
